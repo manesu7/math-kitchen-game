@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>International Kitchen: Recipe Localizer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+    <h1> International Kitchen Math Game </h1>
+
+    <!-- 1. Setup screen, start game by selecting the number of players -->
+    <div id="setup-screen" class="setup-screen active">
+        <p class="welcome-text">Welcome! Learn math by adapting foreign recipes for local diners. Grab 2 or 3 players to start!</p>
+        <div class="setup-group">
+            <label for="player-count">How many cooks in the kitchen? </label>
+            <select id="player-count">
+                <option value="2">2 Players</option>
+                <option value="3">3 Players</option>
+            </select>
+        </div>
+        <div class="center-container">
+            <button class="btn" onclick="startGame()">Start Cooking Match</button>
+        </div>
+    </div>
+
+    <div id="game-screen" class="game-screen">
+        <div class="scoreboard" id="scoreboard">
+            <!-- Dynamic player scores generate here -->
+        </div>
+
+        <!-- Timer bar -->
+        <div class="timer-container">
+            <div class="timer-label">Time Left: <span id="timer-text">20</span>s</div>
+            <div class="timer-bar-bg">
+                <div id="timer-bar" class="timer-bar-fill"></div>
+            </div>
+        </div>
+
+        <div class="recipe-box">
+            <h3 id="recipe-title">Recipe</h3>
+            <p id="recipe-info"></p>
+        </div>
+
+        <div class="question-box">
+            <span id="turn-announcement"></span>
+            <p id="math-challenge"></p>
+        </div>
+
+        <div class="options-container" id="options">
+            <!-- option buttons here -->
+        </div>
+
+        <div id="feedback" class="feedback"></div>
+    </div>
+
+    <!-- 3. Winner screen -->
+    <div id="winner-screen" class="winner-screen">
+        <h2> Match Complete!</h2>
+        <p id="winner-text"></p>
+        <button class="btn" onclick="resetGame()">Play Again</button>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
